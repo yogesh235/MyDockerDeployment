@@ -1,9 +1,3 @@
-# FROM node:24-alpine
-# WORKDIR /app
-# COPY . .
-# RUN npm install --omit=dev
-# CMD ["node", "src/index.js"]
-# EXPOSE 3000
 FROM node:24-alpine AS Build
 WORKDIR /app
 COPY package.json /app/
