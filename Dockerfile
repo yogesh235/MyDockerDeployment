@@ -7,5 +7,5 @@ CMD ["npm", "run", "dev"]
 
 FROM nginx:alpine
 RUN rm -rf /usr/share/nginx/html/*
-COPY --from=Build . /usr/share/nginx/html
+COPY --from=Build /src/ /usr/share/nginx/html
 EXPOSE 80
