@@ -5,8 +5,7 @@ RUN npm install
 COPY . /app/
 RUN npm run dev
 
-FROM nginx
+FROM nginx:alpine
 RUN rm -rf /usr/share/nginx/html/*
-WORKDIR /app
-COPY --from=Build /app /usr/share/nginx/html
+COPY --from=Build /app/dist /usr/share/nginx/html
 EXPOSE 80
